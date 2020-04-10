@@ -43,6 +43,24 @@ const Navbar = (props) => {
             <li
               className={`nav-item ${
                 props.history.location.pathname.trim().replace("/#/g", "") ===
+                "/"
+                  ? "active"
+                  : ""
+              }`}
+            >
+              <a
+                className="nav-link"
+                href="#"
+                onClick={() => {
+                  props.history.push("/");
+                }}
+              >
+                The Park <span className="sr-only">(current)</span>
+              </a>
+            </li>
+            <li
+              className={`nav-item ${
+                props.history.location.pathname.trim().replace("/#/g", "") ===
                 "/items-menu"
                   ? "active"
                   : ""
@@ -55,7 +73,7 @@ const Navbar = (props) => {
                   props.history.push("/items-menu");
                 }}
               >
-                ItemsMenu <span className="sr-only">(current)</span>
+                Menu <span className="sr-only">(current)</span>
               </a>
             </li>
             <li

@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
+import Restaurant from "./Restaurant/Restaurant";
 import ItemsMenu from "./ItemsMenu/ItemsMenu";
 import CheckOut from "./CheckOut/Checkout";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -19,6 +20,11 @@ function App() {
     <div className="">
       <Router>
         <Switch>
+          <Route
+            exact
+            path="/"
+            component={(props) => <Restaurant {...props} />}
+          />
           <Route
             exact
             path="/items-menu"
